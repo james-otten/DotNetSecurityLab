@@ -1,0 +1,13 @@
+﻿@model DotNetSecurityLabWeb.Models.AboutViewModel
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title .NET Security Lab</h2>
+<p>.NET Security Lab is an intentionally vulnerable ASP.NET web application designed to help application security specialists gain experience working with .NET applications.</p>
+
+<h3>Operational Security Warning</h3>
+<p>By design, this application is vulnerable to several types of attacks, including remote code execution. Use your own judgment when deciding when, where, and if it is appropriate to run this application. At a minimum, I would suggest running this application in a VM which is only accessible from your machine.</p>
+
+<h3>Technical Application Details</h3>
+<p>This application is built using ASP.NET MVC 5, targeting .NET 4.6.1.</p>
+<pre>@Model.ReferencedAssemblies</pre>
