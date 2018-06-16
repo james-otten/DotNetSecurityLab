@@ -1,0 +1,39 @@
+﻿@model DotNetSecurityLabWeb.Models.XmlViewModel
+
+@{
+    ViewBag.Title = "Xml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>XML</h2>
+
+<form id="payload_form" method="post" action="/Xml/Parse">
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Parser, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("parser", EnumHelper.GetSelectList(typeof(DotNetSecurityLabWeb.Models.DotNetSecurityLabEnums.XmlParserClassTypeEnum)), new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Data, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextArea("Data", Model.Data, new { @class = "form-control", @rows = "10", @cols = "100", @style = "max-width: 100%;" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Parse" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@if (Model.Data != null && Model.Output != null && Model.Output.Length > 0)
+{
+    <pre>@Model.Output</pre>
+}
+
+

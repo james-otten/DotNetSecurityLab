@@ -15,5 +15,11 @@ namespace DotNetSecurityLabWeb.Models
             JavascriptSerializer = 4,
             DataContractJsonSerializer = 5,
         }
+
+        public enum XmlParserClassTypeEnum
+        {
+            XmlDocument = 0,
+            XmlTextReader = 1
+        }
     }
 }

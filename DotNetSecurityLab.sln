@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeserializationLibFull", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetSecurityLabWeb", "DotNetSecurityLabWeb\DotNetSecurityLabWeb.csproj", "{A020A967-C6AD-4DB9-B181-150343621D43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlLibFull", "XmlLibFull\XmlLibFull.csproj", "{7A1F5B2A-D3CC-4810-AD3B-0C9DD0FAB2A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A020A967-C6AD-4DB9-B181-150343621D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A020A967-C6AD-4DB9-B181-150343621D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A020A967-C6AD-4DB9-B181-150343621D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A1F5B2A-D3CC-4810-AD3B-0C9DD0FAB2A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A1F5B2A-D3CC-4810-AD3B-0C9DD0FAB2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A1F5B2A-D3CC-4810-AD3B-0C9DD0FAB2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A1F5B2A-D3CC-4810-AD3B-0C9DD0FAB2A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
