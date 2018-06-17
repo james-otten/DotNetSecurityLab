@@ -21,6 +21,7 @@ namespace DotNetSecurityLabWeb.Controllers
 
         // POST: Deserialize
         //Security Warning: Intentionally vulnerable to CSRF
+        [ValidateInput(false)]//Security Warning: Unsafe, can lead to XSS
         public ActionResult Deserialize(string data, int library)
         {
             var model = BuildModel();

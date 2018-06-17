@@ -11,6 +11,12 @@ namespace DeserializationLibStandard
             SweetJayson = 3,
             JavascriptSerializer = 4,
             DataContractJsonSerializer = 5,
+            BinaryFormatter = 6,
+            SoapFormatter = 7,
+            NetDataContractSerializer = 8,
+            DataContractSerializer = 9,
+            ObjectStateFormatter = 10,
+            LosFormatter = 11
         }
     }
 }

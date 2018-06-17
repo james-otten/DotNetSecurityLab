@@ -17,7 +17,7 @@ namespace DotNetSecurityLabWeb.Controllers
             return View(model);
         }
 
-        // POST: Xml
+        // POST: Parse
         //Security Warning: Intentionally vulnerable to CSRF
         [ValidateInput(false)]//Security Warning: Unsafe, can lead to XSS
         public ActionResult Parse(string data, int parser)

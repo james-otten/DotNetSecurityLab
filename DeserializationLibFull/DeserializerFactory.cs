@@ -1,6 +1,10 @@
-﻿using DeserializationLibFull.Json.Deserializers;
+﻿using DeserializationLibFull.Binary.Deserializers;
+using DeserializationLibFull.Json.Deserializers;
+using DeserializationLibFull.Xml.Deserializers;
 using DeserializationLibStandard;
+using DeserializationLibStandard.Binary.Deserializers;
 using DeserializationLibStandard.Json.Deserializers;
+using DeserializationLibStandard.Xml.Deserializers;
 using System;
 
 namespace DeserializationLibFull
@@ -23,6 +27,18 @@ namespace DeserializationLibFull
                     return new JavascriptSerializerDeserializer<T>();
                 case DeserializerEnums.DeserializerTypeEnum.DataContractJsonSerializer:
                     return new DataContractJsonSerializerDeserializer<T>();
+                case DeserializerEnums.DeserializerTypeEnum.BinaryFormatter:
+                    return new BinaryFormatterDeserializer<T>();
+                case DeserializerEnums.DeserializerTypeEnum.SoapFormatter:
+                    return new SoapFormatterDeserializer<T>();
+                case DeserializerEnums.DeserializerTypeEnum.NetDataContractSerializer:
+                    return new NetDataContractSerializerDeserializer<T>();
+                case DeserializerEnums.DeserializerTypeEnum.DataContractSerializer:
+                    return new DataContractSerializerDeserializer<T>();
+                case DeserializerEnums.DeserializerTypeEnum.ObjectStateFormatter:
+                    return new ObjectStateFormatterDeserializer<T>();
+                case DeserializerEnums.DeserializerTypeEnum.LosFormatter:
+                    return new LosFormatterDeserializer<T>();
                 default:
                     throw new Exception("Unsupported serializer");
             }
