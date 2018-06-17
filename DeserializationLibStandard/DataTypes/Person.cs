@@ -3,15 +3,18 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 namespace DeserializationLibStandard.DataTypes
 {
     [Serializable]
     [KnownType(typeof(Name))]
-    [KnownType(typeof(Dictionary<string, Object>))]
+    [KnownType(typeof(List<Property>))]
     [KnownType(typeof(Address))]
     [KnownType(typeof(Object))]
     [JsonConverter(typeof(CustomConverter))]
+    [XmlInclude(typeof(Name))]
+    [XmlInclude(typeof(Address))]
     public class Person: ISerializable
     {
         public Name Name { get; set; }
@@ -20,17 +23,17 @@ namespace DeserializationLibStandard.DataTypes
 
         public Object Address { get; set; }
 
-        public Dictionary<string, Object> Properties { get; set; }
+        public List<Property> Properties { get; set; }
 
         public Person()
         {
             Name = new Name();
-            Properties = new Dictionary<string, object>();
+            Properties = new List<Property>();
         }
 
         protected Person(SerializationInfo info, StreamingContext context)
         {
-            Properties = new Dictionary<string, object>();
+            Properties = new List<Property>();
             foreach (var entry in info)
             {
                 switch(entry.Name)
@@ -46,7 +49,7 @@ namespace DeserializationLibStandard.DataTypes
                         break;
                     default:
                         object array = entry.Value as object;
-                        Properties.Add(entry.Name, array);
+                        Properties.Add(new Property(entry.Name, array));
                         break;
                 }
             }
@@ -57,9 +60,9 @@ namespace DeserializationLibStandard.DataTypes
             info.AddValue("Name", Name);
             info.AddValue("Age", Age);
             info.AddValue("Address", Address);
-            foreach (string key in Properties.Keys)
+            foreach (var item in Properties)
             {
-                info.AddValue(key, Properties[key]);
+                info.AddValue(item.Key, item.Value);
             }
         }
 
@@ -80,9 +83,9 @@ namespace DeserializationLibStandard.DataTypes
 
             if (Properties != null)
             {
-                foreach (var key in Properties.Keys)
+                foreach (var item in Properties)
                 {
-                    ret += "\nProperty: " + key + " Value: " + Properties[key].ToString();
+                    ret += "\nProperty: " + item.Key + " Value: " + item.Value.ToString();
                 }
             }
             return ret;

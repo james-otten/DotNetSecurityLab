@@ -24,7 +24,7 @@ namespace DeserializationLibStandard.Json
             person.Address = JsonConvert.DeserializeObject<Object>(obj["Address"].ToString(),
                 new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All });
             //Security Warning: The following code is intentionally vulnerable to a serialization vulnerability
-            person.Properties = JsonConvert.DeserializeObject<Dictionary<string, Object>>(obj["Properties"].ToString(),
+            person.Properties = JsonConvert.DeserializeObject<List<Property>>(obj["Properties"].ToString(),
                 new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All });
             return person;
         }

@@ -16,7 +16,8 @@ namespace DeserializationLibStandard
             NetDataContractSerializer = 8,
             DataContractSerializer = 9,
             ObjectStateFormatter = 10,
-            LosFormatter = 11
+            LosFormatter = 11,
+            XmlSerializer = 12
         }
     }
 }

@@ -39,6 +39,8 @@ namespace DeserializationLibFull
                     return new ObjectStateFormatterDeserializer<T>();
                 case DeserializerEnums.DeserializerTypeEnum.LosFormatter:
                     return new LosFormatterDeserializer<T>();
+                case DeserializerEnums.DeserializerTypeEnum.XmlSerializer:
+                    return new XmlSerializerDeserializer<T>();
                 default:
                     throw new Exception("Unsupported serializer");
             }

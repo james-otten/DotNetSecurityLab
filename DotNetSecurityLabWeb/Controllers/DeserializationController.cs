@@ -50,9 +50,9 @@ namespace DotNetSecurityLabWeb.Controllers
                 },
                 Age = 26,
                 Address = new Address { Street = "123 Some Street", City = "Some City", State = "MN" },
-                Properties = new Dictionary<string, object>()
+                Properties = new List<Property>()
             };
-            defaultObj.Properties.Add("address", new Address { Street = "123 Some Street", City = "Some City", State = "MN" });
+            defaultObj.Properties.Add(new Property("address", new Address { Street = "123 Some Street", City = "Some City", State = "MN" }));
 
             for(int i = 0; i < Enum.GetNames(typeof(DeserializerTypeEnum)).Length; i++)
             {

@@ -20,6 +20,7 @@ namespace DotNetSecurityLabWeb.Models
             DataContractSerializer = 9,
             ObjectStateFormatter = 10,
             LosFormatter = 11,
+            XmlSerializer = 12
         }
 
         public enum XmlParserClassTypeEnum
