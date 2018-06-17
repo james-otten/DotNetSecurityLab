@@ -1,4 +1,4 @@
-﻿@model DotNetSecurityLabWeb.Models.JsonViewModel
+﻿@model DotNetSecurityLabWeb.Models.DeserializationViewModel
 
 @{
     ViewBag.Title = "Json";
@@ -8,8 +8,8 @@
 <script>
     $(function () {
         function setExampleData(index) {
-            var defaultData = @Html.Raw(Json.Encode(Model.DefaultJson));
-            if (index >= 0 && index < @Model.DefaultJson.Count) {
+            var defaultData = @Html.Raw(Json.Encode(Model.DefaultData));
+            if (index >= 0 && index < @Model.DefaultData.Count) {
                 $('#Data').val(defaultData[index]);
             }
         }
@@ -22,7 +22,7 @@
 
 <h2>JSON</h2>
 
-<form id="payload_form" method="post" action="/Json/Deserialize">
+<form id="payload_form" method="post" action="/Deserialization/Deserialize">
     <div class="form-horizontal">
         <div class="form-group">
             @Html.LabelFor(model => model.Library, new { @class = "control-label col-md-2" })

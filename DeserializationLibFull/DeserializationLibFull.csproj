@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Json\Deserializers\JavascriptSerializerDeserializer.cs" />
-    <Compile Include="Json\JsonDeserializerFactory.cs" />
+    <Compile Include="DeserializerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

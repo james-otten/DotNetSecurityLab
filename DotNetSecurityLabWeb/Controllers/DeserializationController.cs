@@ -1,5 +1,5 @@
 ﻿using DeserializationLibStandard.DataTypes;
-using DeserializationLibFull.Json;
+using DeserializationLibFull;
 using DotNetSecurityLabWeb.Models;
 using System;
 using System.Collections.Generic;
@@ -9,13 +9,13 @@ using static DotNetSecurityLabWeb.Models.DotNetSecurityLabEnums;
 
 namespace DotNetSecurityLabWeb.Controllers
 {
-    public class JsonController : Controller
+    public class DeserializationController : Controller
     {
         // GET: Json
         public ActionResult Index()
         {
             var model = BuildModel();
-            model.Data = model.DefaultJson[0];
+            model.Data = model.DefaultData[0];
             return View(model);
         }
 
@@ -27,18 +27,18 @@ namespace DotNetSecurityLabWeb.Controllers
             model.Data = data;
             model.Library = (SerializationTypeEnum)library;
 
-            var factory = new JsonDeserializerFactory<Person>();
-            var deserializer = factory.GetDeserializer((JsonDeserializerTypeEnum)library);
+            var factory = new DeserializerFactory<Person>();
+            var deserializer = factory.GetDeserializer((DeserializerTypeEnum)library);
             var person = deserializer.Deserialize(data);
             model.Output = person.ToString();
 
             return View("Index", model);
         }
 
-        private JsonViewModel BuildModel()
+        private DeserializationViewModel BuildModel()
         {
-            var factory = new JsonDeserializerFactory<Person>();
-            var ret = new JsonViewModel();
+            var factory = new DeserializerFactory<Person>();
+            var ret = new DeserializationViewModel();
             var defaultObj = new Person()
             {
                 Name = new Name()
@@ -53,11 +53,11 @@ namespace DotNetSecurityLabWeb.Controllers
             };
             defaultObj.Properties.Add("address", new Address { Street = "123 Some Street", City = "Some City", State = "MN" });
 
-            for(int i = 0; i < Enum.GetNames(typeof(JsonDeserializerTypeEnum)).Length; i++)
+            for(int i = 0; i < Enum.GetNames(typeof(DeserializerTypeEnum)).Length; i++)
             {
-                var ser = factory.GetDeserializer((JsonDeserializerTypeEnum)i);
+                var ser = factory.GetDeserializer((DeserializerTypeEnum)i);
                 var serialized = ser.Serialize(defaultObj);
-                ret.DefaultJson.Add(serialized);
+                ret.DefaultData.Add(serialized);
             }
 
             return ret;

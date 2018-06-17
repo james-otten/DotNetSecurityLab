@@ -3,11 +3,11 @@ using static DotNetSecurityLabWeb.Models.DotNetSecurityLabEnums;
 
 namespace DotNetSecurityLabWeb.Models
 {
-    public class JsonViewModel
+    public class DeserializationViewModel
     {
-        public JsonViewModel()
+        public DeserializationViewModel()
         {
-            DefaultJson = new List<string>();
+            DefaultData = new List<string>();
         }
 
         public string Data { get; set; }
@@ -16,6 +16,6 @@ namespace DotNetSecurityLabWeb.Models
 
         public SerializationTypeEnum Library { get; set; }
 
-        public List<string> DefaultJson { get; set; }
+        public List<string> DefaultData { get; set; }
     }
 }
