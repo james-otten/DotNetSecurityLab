@@ -65,6 +65,9 @@
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="saxon9he-api, Version=9.8.0.12, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Saxon-HE.9.8.0.12\lib\net40\saxon9he-api.dll</HintPath>
+    </Reference>
     <Reference Include="Sweet.Jayson, Version=1.0.4.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sweet.Jayson.1.0.4.1\lib\net461\Sweet.Jayson.dll</HintPath>
     </Reference>
@@ -148,11 +151,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\DeserializationController.cs" />
     <Compile Include="Controllers\XmlController.cs" />
+    <Compile Include="Controllers\XsltController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AboutViewModel.cs" />
     <Compile Include="Models\DotNetSecurityLabEnums.cs" />
+    <Compile Include="Models\XsltViewModel.cs" />
     <Compile Include="Models\XmlViewModel.cs" />
     <Compile Include="Models\DeserializationViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,6 +201,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Deserialization\Index.cshtml" />
     <Content Include="Views\Xml\Index.cshtml" />
+    <Content Include="Views\Xslt\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -225,6 +231,10 @@
     <ProjectReference Include="..\XmlLibFull\XmlLibFull.csproj">
       <Project>{7a1f5b2a-d3cc-4810-ad3b-0c9dd0fab2a4}</Project>
       <Name>XmlLibFull</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XsltLibFull\XsltLibFull.csproj">
+      <Project>{151654d6-ea02-4690-a489-da83baa885f7}</Project>
+      <Name>XsltLibFull</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

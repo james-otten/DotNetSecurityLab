@@ -28,5 +28,13 @@ namespace DotNetSecurityLabWeb.Models
             XmlDocument = 0,
             XmlTextReader = 1
         }
+
+        public enum XsltProcessorClassTypeEnum
+        {
+            XslCompiledTransform = 0,
+            XslTransform = 1,
+            [Display(Name = "Saxon HE")]
+            SaxonHE = 2
+        }
     }
 }
