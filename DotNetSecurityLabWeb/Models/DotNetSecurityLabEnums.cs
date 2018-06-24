@@ -9,18 +9,21 @@ namespace DotNetSecurityLabWeb.Models
             FastJSON = 0,
             [Display(Name = "Json.Net")]
             JsonDotNet = 1,
-            FSPickler = 2,
+            [Display(Name = "FSPickler Json")]
+            FSPicklerJson = 2,
+            [Display(Name = "FSPickler Xml")]
+            FSPicklerXml = 3,
             [Display(Name = "Sweet.Jayson")]
-            SweetJayson = 3,
-            JavascriptSerializer = 4,
-            DataContractJsonSerializer = 5,
-            BinaryFormatter = 6,
-            SoapFormatter = 7,
-            NetDataContractSerializer = 8,
-            DataContractSerializer = 9,
-            ObjectStateFormatter = 10,
-            LosFormatter = 11,
-            XmlSerializer = 12
+            SweetJayson = 4,
+            JavascriptSerializer = 5,
+            DataContractJsonSerializer = 6,
+            BinaryFormatter = 7,
+            SoapFormatter = 8,
+            NetDataContractSerializer = 9,
+            DataContractSerializer = 10,
+            ObjectStateFormatter = 11,
+            LosFormatter = 12,
+            XmlSerializer = 13
         }
 
         public enum XmlParserClassTypeEnum

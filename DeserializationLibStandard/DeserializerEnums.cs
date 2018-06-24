@@ -7,17 +7,18 @@ namespace DeserializationLibStandard
         {
             FastJSON = 0,
             JsonDotNet = 1,
-            FSPickler = 2,
-            SweetJayson = 3,
-            JavascriptSerializer = 4,
-            DataContractJsonSerializer = 5,
-            BinaryFormatter = 6,
-            SoapFormatter = 7,
-            NetDataContractSerializer = 8,
-            DataContractSerializer = 9,
-            ObjectStateFormatter = 10,
-            LosFormatter = 11,
-            XmlSerializer = 12
+            FSPicklerJson = 2,
+            FSPicklerXml = 3,
+            SweetJayson = 4,
+            JavascriptSerializer = 5,
+            DataContractJsonSerializer = 6,
+            BinaryFormatter = 7,
+            SoapFormatter = 8,
+            NetDataContractSerializer = 9,
+            DataContractSerializer = 10,
+            ObjectStateFormatter = 11,
+            LosFormatter = 12,
+            XmlSerializer = 13
         }
     }
 }

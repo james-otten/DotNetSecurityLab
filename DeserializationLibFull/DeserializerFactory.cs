@@ -19,8 +19,10 @@ namespace DeserializationLibFull
                     return new FastJSONDeserializer<T>();
                 case DeserializerEnums.DeserializerTypeEnum.JsonDotNet:
                     return new JsonDotNetDeserializer<T>();
-                case DeserializerEnums.DeserializerTypeEnum.FSPickler:
-                    return new FSPicklerDeserializer<T>();
+                case DeserializerEnums.DeserializerTypeEnum.FSPicklerJson:
+                    return new FSPicklerJsonDeserializer<T>();
+                case DeserializerEnums.DeserializerTypeEnum.FSPicklerXml:
+                    return new FSPicklerXmlDeserializer<T>();
                 case DeserializerEnums.DeserializerTypeEnum.SweetJayson:
                     return new SweetJaysonDeserializer<T>();
                 case DeserializerEnums.DeserializerTypeEnum.JavascriptSerializer:
