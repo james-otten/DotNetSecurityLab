@@ -5,33 +5,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>XML</h2>
+<h2>XSLT</h2>
 
 <form id="payload_form" method="post" action="/Xslt/Process">
     <div class="form-horizontal">
         <div class="form-group">
-            @Html.LabelFor(model => model.Parser, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Parser, new { @class = "control-label col-md-1" })
             <div class="col-md-10">
                 @Html.DropDownList("processor", EnumHelper.GetSelectList(typeof(DotNetSecurityLabWeb.Models.DotNetSecurityLabEnums.XsltProcessorClassTypeEnum)), new { @class = "form-control" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Xslt, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Xslt, new { @class = "control-label col-md-1" })
             <div class="col-md-10">
                 @Html.TextArea("Xslt", Model.Xslt, new { @class = "form-control", @rows = "10", @cols = "100", @style = "max-width: 100%;" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Xml, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Xml, new { @class = "control-label col-md-1" })
             <div class="col-md-10">
                 @Html.TextArea("Xml", Model.Xml, new { @class = "form-control", @rows = "10", @cols = "100", @style = "max-width: 100%;" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-1 col-md-10">
                 <input type="submit" value="Process" class="btn btn-default" />
             </div>
         </div>
@@ -40,7 +40,14 @@
 
 @if (Model.Output != null && Model.Output.Length > 0)
 {
-    <pre>@Model.Output</pre>
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Output, new { @class = "control-label col-md-1" })
+            <div class="col-md-10">
+                <pre>@Model.Output</pre>
+            </div>
+        </div>
+    </div>
 }
 
 
