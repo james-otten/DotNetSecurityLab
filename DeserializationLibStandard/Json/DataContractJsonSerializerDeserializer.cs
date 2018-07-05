@@ -3,7 +3,7 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
 
-namespace DeserializationLibFull.Json.Deserializers
+namespace DeserializationLibFull.Json
 {
     public class DataContractJsonSerializerDeserializer<T> : IVulnerableDeserializer<T>
     {

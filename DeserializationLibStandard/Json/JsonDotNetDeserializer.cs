@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace DeserializationLibStandard.Json.Deserializers
+namespace DeserializationLibStandard.Json
 {
     public class JsonDotNetDeserializer<T> : IVulnerableDeserializer<T>
     {

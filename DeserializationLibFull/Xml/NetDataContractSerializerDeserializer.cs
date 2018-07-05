@@ -1,29 +1,31 @@
 ﻿using DeserializationLibStandard;
+using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Soap;
 using System.Text;
+using System.Runtime.Serialization;
 
-namespace DeserializationLibFull.Xml.Deserializers
+namespace DeserializationLibFull.Xml
 {
-    public class SoapFormatterDeserializer<T> : IVulnerableDeserializer<T>
+    class NetDataContractSerializerDeserializer<T> : IVulnerableDeserializer<T>
     {
         //Security Warning: The following code is intentionally vulnerable to a serialization vulnerability
         public T Deserialize(string data)
         {
-            var formatter = new SoapFormatter();
+            var ser = new NetDataContractSerializer();
             var bytes = Encoding.ASCII.GetBytes(data);
             using (var stream = new MemoryStream(bytes))
             {
-                return (T)formatter.Deserialize(stream);
+                return (T)ser.ReadObject(stream);
             }
         }
 
         public string Serialize(T obj)
         {
-            var formatter = new SoapFormatter();
+            var ser = new NetDataContractSerializer();
             using (var stream = new MemoryStream())
             {
-                formatter.Serialize(stream, obj);
+                ser.WriteObject(stream, obj);
                 return Encoding.ASCII.GetString(stream.ToArray());
             }
         }

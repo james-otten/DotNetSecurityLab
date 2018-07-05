@@ -45,13 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Binary\Deserializers\LosFormatterDeserializer.cs" />
-    <Compile Include="Binary\Deserializers\ObjectStateFormatterDeserializer.cs" />
-    <Compile Include="Json\Deserializers\JavascriptSerializerDeserializer.cs" />
+    <Compile Include="Binary\LosFormatterDeserializer.cs" />
+    <Compile Include="Binary\ObjectStateFormatterDeserializer.cs" />
+    <Compile Include="Json\JavascriptSerializerDeserializer.cs" />
     <Compile Include="DeserializerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Xml\Deserializers\NetDataContractSerializerDeserializer.cs" />
-    <Compile Include="Xml\Deserializers\SoapFormatterDeserializer.cs" />
+    <Compile Include="Xml\NetDataContractSerializerDeserializer.cs" />
+    <Compile Include="Xml\SoapFormatterDeserializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DeserializationLibStandard\DeserializationLibStandard.csproj">

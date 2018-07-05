@@ -1,10 +1,10 @@
-﻿using DeserializationLibFull.Binary.Deserializers;
-using DeserializationLibFull.Json.Deserializers;
-using DeserializationLibFull.Xml.Deserializers;
+﻿using DeserializationLibFull.Binary;
+using DeserializationLibFull.Json;
+using DeserializationLibFull.Xml;
 using DeserializationLibStandard;
-using DeserializationLibStandard.Binary.Deserializers;
-using DeserializationLibStandard.Json.Deserializers;
-using DeserializationLibStandard.Xml.Deserializers;
+using DeserializationLibStandard.Binary;
+using DeserializationLibStandard.Json;
+using DeserializationLibStandard.Xml;
 using System;
 
 namespace DeserializationLibFull

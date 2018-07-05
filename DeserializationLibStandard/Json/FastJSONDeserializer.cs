@@ -1,5 +1,5 @@
 ﻿
-namespace DeserializationLibStandard.Json.Deserializers
+namespace DeserializationLibStandard.Json
 {
     public class FastJSONDeserializer<T> : IVulnerableDeserializer<T>
     {

@@ -1,17 +1,17 @@
 ﻿using DeserializationLibStandard;
+using System;
 using System.IO;
-using System.Text;
 using System.Web.UI;
 
-namespace DeserializationLibFull.Binary.Deserializers
+namespace DeserializationLibFull.Binary
 {
-    class LosFormatterDeserializer<T> : IVulnerableDeserializer<T>
+    class ObjectStateFormatterDeserializer<T> : IVulnerableDeserializer<T>
     {
         //Security Warning: The following code is intentionally vulnerable to a serialization vulnerability
         public T Deserialize(string data)
         {
-            var ser = new LosFormatter();
-            var bytes = Encoding.ASCII.GetBytes(data);
+            var ser = new ObjectStateFormatter();
+            var bytes = Convert.FromBase64String(data);
             using (var stream = new MemoryStream(bytes))
             {
                 return (T)ser.Deserialize(stream);
@@ -20,11 +20,11 @@ namespace DeserializationLibFull.Binary.Deserializers
 
         public string Serialize(T obj)
         {
-            var ser = new LosFormatter();
+            var ser = new ObjectStateFormatter();
             using (var stream = new MemoryStream())
             {
                 ser.Serialize(stream, obj);
-                return Encoding.ASCII.GetString(stream.ToArray());
+                return Convert.ToBase64String(stream.ToArray());
             }
         }
     }

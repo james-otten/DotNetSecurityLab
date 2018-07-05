@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace DeserializationLibStandard.Json
+namespace DeserializationLibStandard.Json.Converters
 {
     class CustomConverter : JsonConverter
     {

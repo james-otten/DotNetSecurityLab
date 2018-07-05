@@ -1,7 +1,7 @@
 ﻿using DeserializationLibStandard;
 using System.Web.Script.Serialization;
 
-namespace DeserializationLibFull.Json.Deserializers
+namespace DeserializationLibFull.Json
 {
     class JavascriptSerializerDeserializer<T> : IVulnerableDeserializer<T>
     {

@@ -1,6 +1,6 @@
 ﻿using Sweet.Jayson;
 
-namespace DeserializationLibStandard.Json.Deserializers
+namespace DeserializationLibStandard.Json
 {
     public class SweetJaysonDeserializer<T> : IVulnerableDeserializer<T>
     {

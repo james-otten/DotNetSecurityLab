@@ -2,7 +2,7 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace DeserializationLibStandard.Binary.Deserializers
+namespace DeserializationLibStandard.Binary
 {
     public class BinaryFormatterDeserializer<T>: IVulnerableDeserializer<T>
     {
