@@ -7,7 +7,8 @@
 
 <h2>XML</h2>
 
-<form id="payload_form" method="post" action="/Xml/Parse">
+@using (Html.BeginForm("Parse", "Xml", FormMethod.Post))
+{
     <div class="form-horizontal">
         <div class="form-group">
             @Html.LabelFor(model => model.Parser, new { @class = "control-label col-md-1" })
@@ -29,8 +30,7 @@
             </div>
         </div>
     </div>
-</form>
-
+}
 @if (Model.Data != null && Model.Output != null && Model.Output.Length > 0)
 {
     <div class="form-horizontal">

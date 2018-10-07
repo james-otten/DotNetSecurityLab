@@ -7,7 +7,7 @@
 
 <h2>XSLT</h2>
 
-<form id="payload_form" method="post" action="/Xslt/Process">
+@using (Html.BeginForm("Process", "Xslt", FormMethod.Post)) {
     <div class="form-horizontal">
         <div class="form-group">
             @Html.LabelFor(model => model.Parser, new { @class = "control-label col-md-1" })
@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-</form>
+}
 
 @if (Model.Output != null && Model.Output.Length > 0)
 {

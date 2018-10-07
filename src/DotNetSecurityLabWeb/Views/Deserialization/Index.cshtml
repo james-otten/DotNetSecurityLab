@@ -20,9 +20,10 @@
     });
 </script>
 
-<h2>JSON</h2>
+<h2>Deserialization</h2>
 
-<form id="payload_form" method="post" action="/Deserialization/Deserialize">
+@using (Html.BeginForm("Deserialize", "Deserialization", FormMethod.Post))
+{
     <div class="form-horizontal">
         <div class="form-group">
             @Html.LabelFor(model => model.Library, new { @class = "control-label col-md-1" })
@@ -44,7 +45,7 @@
             </div>
         </div>
     </div>
-</form>
+}
 
 @if (Model.Data != null && Model.Output != null && Model.Output.Length > 0)
 {
